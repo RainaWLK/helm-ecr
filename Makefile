@@ -1,4 +1,4 @@
-PKG := github.com/vetyy/helm-ecr
+PKG := github.com/RainaWLK/helm-ecr
 GO111MODULE := on
 
 .PHONY: all
