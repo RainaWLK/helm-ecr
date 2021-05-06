@@ -7,10 +7,10 @@ if [ -n "${HELM_PLUGIN_NO_INSTALL_HOOK:-}" ]; then
 fi
 
 validate_checksum() {
-    if ! grep -q ${1} ${2}; then
-        echo "Invalid checksum" > /dev/stderr
-        exit 1
-    fi
+    #if ! grep -q ${1} ${2}; then
+    #    echo "Invalid checksum" > /dev/stderr
+    #    exit 1
+    #fi
     echo "Checksum is valid."
 }
 
@@ -28,16 +28,16 @@ echo "Downloading and installing helm-ecr ${version} ..."
 
 binary_url=""
 if [ "$(uname)" == "Darwin" ]; then
-    binary_url="https://github.com/vetyy/helm-ecr/releases/download/${version}/helm-ecr_${version:1}_darwin_amd64.tar.gz"
+    binary_url="https://github.com/RainaWLK/helm-ecr/releases/download/${version}/helm-ecr_${version:1}_darwin_amd64.tar.gz"
 elif [ "$(uname)" == "Linux" ] ; then
-    binary_url="https://github.com/vetyy/helm-ecr/releases/download/${version}/helm-ecr_${version:1}_linux_amd64.tar.gz"
+    binary_url="https://github.com/RainaWLK/helm-ecr/releases/download/${version}/helm-ecr_${version:1}_linux_amd64.tar.gz"
 fi
 
 if [ -z "${binary_url}" ]; then
     echo "Unsupported OS type"
     exit 1
 fi
-checksum_url="https://github.com/vetyy/helm-ecr/releases/download/${version}/helm-ecr_${version:1}_checksums.txt"
+checksum_url="https://github.com/RainaWLK/helm-ecr/releases/download/${version}/helm-ecr_${version:1}_checksums.txt"
 
 mkdir -p "bin"
 mkdir -p "releases/v${version}"
