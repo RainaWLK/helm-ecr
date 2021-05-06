@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=0.1.3
+VERSION=0.1.4
 
 rm helm-ecr_${VERSION}_darwin_amd64.tar.gz
 
