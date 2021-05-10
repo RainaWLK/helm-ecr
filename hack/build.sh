@@ -3,6 +3,8 @@
 projectRoot="$1"
 pkg="$2"
 
+GOPATH="/Users/luke.shih/go"
+
 if [ ! -e "${GOPATH}/src/${pkg}" ]; then
     mkdir -p $(dirname "${GOPATH}/src/${pkg}")
     ln -sfn "${projectRoot}" "${GOPATH}/src/${pkg}"
